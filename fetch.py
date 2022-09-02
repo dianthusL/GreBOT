@@ -1,14 +1,13 @@
-
 import selenium
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from Town import Town,Village
+from town import Town, Village
 import time
 
-def fetchdata(driver, DEBUG):
+def fetch_data(driver, DEBUG):
 
   my_towns_local = []                                                                                     #Tutaj iniclaizujemy pustą listę używaną dalej w funkcji
 
@@ -82,8 +81,9 @@ def fetchdata(driver, DEBUG):
     #Już wiemy że jesteśmy w dobrym mieście
     #Przechodzimy do ekranu wyspy
     WebDriverWait(driver, 10).until(
-      EC.presence_of_element_located((By.CLASS_NAME, "island_view"))                                                    #czekamy 10 sec, albo do przycisk next town clickable
+      EC.element_to_be_clickable((By.CLASS_NAME, "island_view"))                                                    #czekamy 10 sec, albo do przycisk next town clickable
     )   
+    time.sleep(1)
     island_map_button.click()
     WebDriverWait(driver, 10).until(
       EC.presence_of_element_located((By.CLASS_NAME, "btn_jump_to_town.circle_button.jump_to_town"))                                                    #czekamy 10 sec, albo do przycisk next town clickable

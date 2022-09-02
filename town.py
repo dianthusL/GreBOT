@@ -7,8 +7,9 @@ class Town():
 		self.population = ""
 		self.max_storage = ""
 		self.village_list = []
+		
 	def state(self):
-		print("Nazwa Wioski:", self.name
+		print("Nazwa wioski:", self.name
 			,"; Drewno: ", self.wood
 			,"; Kamien: ", self.stone
 			,"; Srebro: ", self.iron
@@ -16,7 +17,7 @@ class Town():
 			,"; Magazyn: ", self.max_storage
 			)
 
-class Village(object):
+class Village():
 	def __init__(self):
 		self.id =""
 		
