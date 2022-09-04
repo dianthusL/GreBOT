@@ -43,6 +43,11 @@ if __name__ == "__main__":
         print("coś poszło nie tak... zamykam")
         raise SystemExit(1)    
 
+    # do ogarniecia
+    # for town in MyTowns:
+    #     for v in town.village_list:
+    #         v.farm(driver)
+
     try:
         print("Bot running!")
     

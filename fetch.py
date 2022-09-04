@@ -4,6 +4,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+
 from town import Town, Village
 import time
 
@@ -83,7 +84,7 @@ def fetch_data(driver, DEBUG):
     WebDriverWait(driver, 10).until(
       EC.element_to_be_clickable((By.CLASS_NAME, "island_view"))                                                    #czekamy 10 sec, albo do przycisk next town clickable
     )   
-    time.sleep(1)
+    time.sleep(2)
     island_map_button.click()
     WebDriverWait(driver, 10).until(
       EC.presence_of_element_located((By.CLASS_NAME, "btn_jump_to_town.circle_button.jump_to_town"))                                                    #czekamy 10 sec, albo do przycisk next town clickable
@@ -105,9 +106,13 @@ def fetch_data(driver, DEBUG):
     print("Fetched Villages:")
     for each_village in each_town.village_list:
       print (each_village.id)
+      # PONIZEJ USUN
+      each_village.farm(driver)
+      # POWYZEJ USUN
+
+
     WebDriverWait(driver, 10).until(
       EC.element_to_be_clickable((town_button))
     )
     town_button.click()
   return(my_towns_local) 
-  
