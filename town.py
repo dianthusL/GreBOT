@@ -45,7 +45,7 @@ class Village():
 				break
 			except:
 				i = i + 1
-				print("wyjebałęm się klikając podczas farmienia:",self.id )
+				print("wyjebałem się klikając podczas farmienia:",self.id )
 				time.sleep(1)
 
 
